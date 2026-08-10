@@ -1,0 +1,30 @@
+[Unit]
+Description=PageHold website archiver
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=websnapshot
+Group=websnapshot
+WorkingDirectory=/opt/websnapshot
+EnvironmentFile=/etc/websnapshot/websnapshot.env
+ExecStart=/opt/websnapshot/.venv/bin/python /opt/websnapshot/app.py
+Restart=on-failure
+RestartSec=5s
+KillSignal=SIGTERM
+TimeoutStopSec=45s
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+ReadWritePaths=/var/lib/websnapshot
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+LockPersonality=true
+
+[Install]
+WantedBy=multi-user.target

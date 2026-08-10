@@ -1,0 +1,3 @@
+@import "theme.css";
+@font-face { font-family: Fixture; src: url('../assets/fixture.woff2'); }
+body { color: #123; font-family: Fixture, sans-serif; }

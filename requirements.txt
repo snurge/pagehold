@@ -1,0 +1,15 @@
+# Direct dependencies
+playwright==1.60.0
+cryptography==49.0.0
+jsonschema==4.25.1
+
+# Fully pinned transitive dependencies for reproducible installations
+attrs==26.1.0
+cffi==2.1.0
+greenlet==3.5.4
+jsonschema-specifications==2025.9.1
+pycparser==3.0
+pyee==13.0.1
+referencing==0.37.0
+rpds-py==2026.6.3
+typing-extensions==4.16.0
