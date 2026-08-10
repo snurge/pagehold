@@ -11,7 +11,7 @@ history; PageHold does not import material from that service.
 
 ## Status
 
-This is an alpha release candidate. Use it for evaluation and keep verified
+This is an alpha release. Use it for evaluation and keep verified
 backups. Archive fidelity varies between websites, especially authenticated,
 streaming, highly interactive, or anti-automation pages.
 
@@ -24,15 +24,13 @@ streaming, highly interactive, or anti-automation pages.
 ## Install
 
 ```bash
-git clone YOUR_REPOSITORY_URL pagehold
+git clone https://github.com/snurge/pagehold.git pagehold
 cd pagehold
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
 .venv/bin/playwright install chromium
 ./scripts/install-standalone.sh
 ```
-
-No repository URL is included yet because this project has not been published.
 
 For a direct development start:
 

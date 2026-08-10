@@ -1,6 +1,7 @@
 import hashlib
 import importlib.util
 import subprocess
+import sys
 import unittest
 from pathlib import Path
 
@@ -81,6 +82,25 @@ class RepositorySafetyTests(unittest.TestCase):
                 check=False,
             )
             self.assertEqual(0, result.returncode, path)
+
+    def test_public_source_link_is_enabled_by_default(self):
+        result = subprocess.run(
+            (
+                sys.executable,
+                "-c",
+                "import os; os.environ.pop('PAGEHOLD_SOURCE_URL', None); "
+                "import product; print(product.SOURCE_URL)",
+            ),
+            cwd=ROOT,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        self.assertEqual("https://github.com/snurge/pagehold", result.stdout.strip())
+        self.assertIn(
+            "git clone https://github.com/snurge/pagehold.git pagehold",
+            (ROOT / "README.md").read_text(encoding="utf-8"),
+        )
 
     def test_source_tree_contains_only_local_product_terms(self):
         forbidden_fragments = ("feder" + "ation", "coord" + "inator")

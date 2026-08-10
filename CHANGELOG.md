@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 0.1.0-alpha.1 - 2026-08-10
+
 ### Changed
 
 - Renamed the product PageHold while retaining WebSnapshot compatibility names internally.
@@ -10,6 +12,7 @@
 - Kept site public/private visibility entirely local to the installation.
 - Retired Internet Archive importing in favor of a browser-opened site history button.
 - Simplified first-use setup, account management, site listing, capture history, and snapshot navigation.
+- Published the standalone source at `https://github.com/snurge/pagehold` and enabled that in-product Source link by default.
 
 ### Security
 
@@ -19,5 +22,3 @@
 ### License
 
 - Added the unmodified GNU Affero General Public License v3 text and adopted `AGPL-3.0-only`.
-
-Dates and versioned release entries will begin with the first published release.

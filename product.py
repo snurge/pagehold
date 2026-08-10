@@ -10,7 +10,9 @@ from urllib.parse import urlsplit
 ROOT = Path(__file__).resolve().parent
 NAME = "PageHold"
 VERSION = (ROOT / "VERSION").read_text(encoding="ascii").strip()
-SOURCE_URL = os.environ.get("PAGEHOLD_SOURCE_URL", "").strip()
+SOURCE_URL = os.environ.get(
+    "PAGEHOLD_SOURCE_URL", "https://github.com/snurge/pagehold"
+).strip()
 
 if SOURCE_URL:
     parsed_source = urlsplit(SOURCE_URL)

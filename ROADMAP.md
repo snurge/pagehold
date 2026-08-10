@@ -2,14 +2,13 @@
 
 PageHold is licensed under `AGPL-3.0-only`.
 
-## Before First Public Release
+## Initial Alpha Follow-up
 
 - Complete the clean single-account source audit and release checklist.
 - Exercise install and upgrade instructions on a clean macOS machine and Ubuntu 24.04 host.
 - Verify static, WordPress, and JavaScript-heavy capture fixtures in Chromium.
 - Test backup, restore, export, and import from a fresh installation.
 - Add screenshots and final product branding when ready.
-- Choose the eventual source repository URL before enabling the in-product Source link.
 
 ## Near Term
 
