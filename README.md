@@ -62,6 +62,13 @@ See `PRODUCTION.md` for reverse-proxy HTTPS, service management, permissions,
 backups, and hardening. PageHold should bind to loopback behind an HTTPS reverse
 proxy in production.
 
+## Feedback
+
+Use the [PageHold issue chooser](https://github.com/snurge/pagehold/issues/new/choose)
+to report a capture problem, installation problem, bug, or suggestion. Reports
+are public, so never attach archives, databases, credentials, cookies, private
+URLs, or private page content.
+
 ## License
 
 PageHold source is licensed under `AGPL-3.0-only`; see `LICENSE`. Archived

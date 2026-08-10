@@ -1,0 +1,86 @@
+name: Report something broken
+description: Tell us about a repeatable PageHold interface or operational problem.
+title: "[Bug]: "
+labels:
+  - bug
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. This issue will be public. Do not
+        include credentials, private archive content, databases, cookies, tokens,
+        `.env` files, or private website addresses.
+
+  - type: input
+    id: version
+    attributes:
+      label: PageHold version
+      placeholder: 0.1.0-alpha.1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Ubuntu or Debian
+        - Another Linux distribution
+        - Windows or WSL
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Safari
+        - Chrome or Chromium
+        - Firefox
+        - Microsoft Edge
+        - Not a browser problem
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: What were you trying to do?
+      description: List the shortest sequence that produces the problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened?
+      description: Include any visible message. You may drag in a privacy-safe screenshot.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: repeatable
+    attributes:
+      label: Repeatability
+      options:
+        - label: I can repeat this problem.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I have removed credentials, cookies, private URLs, archive contents, databases, and other private information.
+          required: true

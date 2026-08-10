@@ -1,0 +1,78 @@
+name: Report an installation problem
+description: Tell us where installing, starting, or upgrading PageHold failed.
+title: "[Installation]: "
+labels:
+  - installation
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This report will be public. Share only the error needed to explain the
+        problem. Do not include passwords, tokens, `.env` contents, private paths,
+        databases, archives, or other user data.
+
+  - type: dropdown
+    id: installation-kind
+    attributes:
+      label: What were you doing?
+      options:
+        - Installing PageHold for the first time
+        - Starting PageHold after installation
+        - Upgrading an existing installation
+        - Restoring or moving an installation
+        - Something else
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Ubuntu or Debian
+        - Another Linux distribution
+        - Windows or WSL
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: operating-system-version
+    attributes:
+      label: Operating system version
+      placeholder: macOS 26 or Ubuntu 24.04
+    validations:
+      required: true
+
+  - type: input
+    id: python-version
+    attributes:
+      label: Python version
+      description: Optional. Enter `python3 --version` if you know how to find it.
+      placeholder: Python 3.12.4
+
+  - type: textarea
+    id: failed-step
+    attributes:
+      label: Where did it stop?
+      description: Describe the last successful step and what happened next.
+    validations:
+      required: true
+
+  - type: textarea
+    id: error
+    attributes:
+      label: Visible error message
+      description: Paste only the relevant redacted lines. A screenshot is also acceptable.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I have removed credentials, tokens, private paths, archive contents, databases, and other private information.
+          required: true

@@ -102,6 +102,21 @@ class RepositorySafetyTests(unittest.TestCase):
             (ROOT / "README.md").read_text(encoding="utf-8"),
         )
 
+    def test_feedback_forms_are_structured_and_privacy_safe(self):
+        template_dir = ROOT / ".github" / "ISSUE_TEMPLATE"
+        forms = tuple(sorted(template_dir.glob("0*.yml")))
+        self.assertEqual(4, len(forms))
+        for form in forms:
+            body = form.read_text(encoding="utf-8")
+            self.assertIn("needs-triage", body, form.name)
+            self.assertIn("label: Privacy check", body, form.name)
+            self.assertIn("required: true", body, form.name)
+            self.assertIn("public", body.lower(), form.name)
+        self.assertEqual(
+            "blank_issues_enabled: false\n",
+            (template_dir / "config.yml").read_text(encoding="ascii"),
+        )
+
     def test_source_tree_contains_only_local_product_terms(self):
         forbidden_fragments = ("feder" + "ation", "coord" + "inator")
         for path in ROOT.rglob("*"):

@@ -1,0 +1,48 @@
+name: Suggest an improvement
+description: Describe something that would make PageHold more useful or easier to use.
+title: "[Suggestion]: "
+labels:
+  - enhancement
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please describe the outcome you need rather than worrying about how it
+        should be implemented. This suggestion and any attachments will be public.
+
+  - type: textarea
+    id: need
+    attributes:
+      label: What are you trying to achieve?
+      placeholder: Describe the task or outcome in ordinary language.
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-difficulty
+    attributes:
+      label: What currently makes that difficult?
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired-outcome
+    attributes:
+      label: What would a good result look like?
+    validations:
+      required: true
+
+  - type: input
+    id: audience
+    attributes:
+      label: Who would benefit?
+      description: Optional. For example, home users, archivists, or small organisations.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I have not included private archives, credentials, personal data, or other private information.
+          required: true

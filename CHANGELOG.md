@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+### Added
+
+- Added structured, privacy-safe GitHub forms for capture, installation, bug, and suggestion feedback.
+
 ## 0.1.0-alpha.1 - 2026-08-10
 
 ### Changed

@@ -1,0 +1,89 @@
+name: Report a capture problem
+description: Tell us about a website that PageHold did not preserve correctly.
+title: "[Capture]: "
+labels:
+  - capture-fidelity
+  - needs-triage
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve PageHold's captures.
+
+        This report will be public. Do not include passwords, cookies, API keys,
+        `.env` files, databases, private archive content, or private website addresses.
+
+  - type: input
+    id: version
+    attributes:
+      label: PageHold version
+      description: This is shown at the bottom of PageHold pages and in the VERSION file.
+      placeholder: 0.1.0-alpha.1
+    validations:
+      required: true
+
+  - type: dropdown
+    id: operating-system
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Ubuntu or Debian
+        - Another Linux distribution
+        - Windows or WSL
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: website
+    attributes:
+      label: Public website address
+      description: Optional. Leave this blank if the website or its address is private.
+      placeholder: https://example.com/
+
+  - type: dropdown
+    id: affected-parts
+    attributes:
+      label: What went wrong?
+      multiple: true
+      options:
+        - Images were missing
+        - Styling or layout was incorrect
+        - Menus or links did not work
+        - Interactive content was missing
+        - Some pages were not captured
+        - The capture did not complete
+        - Something else
+    validations:
+      required: true
+
+  - type: textarea
+    id: observed
+    attributes:
+      label: What did you see?
+      description: Describe the result and any message PageHold displayed.
+      placeholder: Explain what happened in ordinary language.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What should the capture have looked like?
+      description: A short description is enough. You may drag in a privacy-safe screenshot.
+
+  - type: checkboxes
+    id: access
+    attributes:
+      label: Website access
+      options:
+        - label: The website can be viewed without signing in.
+
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I have removed credentials, cookies, private URLs, archive contents, databases, and other private information.
+          required: true

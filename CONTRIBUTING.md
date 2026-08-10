@@ -1,6 +1,7 @@
 # Contributing
 
-PageHold is currently preparing for its first public alpha release.
+PageHold is public alpha software. Structured feedback forms are available
+through the repository's issue chooser.
 
 1. Read `AGENTS.md`, `README.md`, `ARCHITECTURE.md`, and `DECISIONS.md`.
 2. Keep changes focused on the single-account self-hosted product.
